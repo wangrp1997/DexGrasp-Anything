@@ -51,7 +51,7 @@ Please refer to our [homepage](https://seq-afford.github.io) for more thrilling 
 <!-- --- -->
 
 
-
+<!--
 ## 🎫 License
 
 For academic use, this project is licensed under [the 2-clause BSD License](https://opensource.org/license/bsd-2-clause). 
@@ -66,3 +66,4 @@ For academic use, this project is licensed under [the 2-clause BSD License](http
       }
 
 ```
+ -->
