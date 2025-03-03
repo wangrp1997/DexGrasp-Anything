@@ -19,26 +19,26 @@
 </p>
 
   
-
+<!--
 <p align="center">
   <a><b>📖 Project Page</b></a> |
   <a><b>📄 Paper Link</b></a> |
 </p>
 
 </div>
-<!--
-> We introduce SeqAfford, a Multi-Modal Language Model (MLLM) capable of serialized affordance inference implied in human instructions: 1) Single Affordance Reasoning; 2) Sequential Affordance Reasoning; 3) Sequential Affordance Reasoning with Multiple Objects-->
-<!--
+
+> We introduce SeqAfford, a Multi-Modal Language Model (MLLM) capable of serialized affordance inference implied in human instructions: 1) Single Affordance Reasoning; 2) Sequential Affordance Reasoning; 3) Sequential Affordance Reasoning with Multiple Objects
+
 <div align="center">
     <img src="fig1.png" height=500>
 </div>
-<!--
+-->
 ## 📣 News
-- [2/27/2025] 🎉🎉🎉SeqAfford has been accepted by CVPR 2025!!!🎉🎉🎉
-- [12/2/2024] SeqAfford has been released on Arxiv now!!!
+- [2/27/2025] 🎉🎉🎉DexGraspAnything has been accepted by CVPR 2025!!!🎉🎉🎉
 <!--
 ## 😲 Results
 Please refer to our [homepage](https://seq-afford.github.io) for more thrilling results!
+-->
 
 ## 🛠️ Setup
 - Comming Soon...
@@ -46,8 +46,9 @@ Please refer to our [homepage](https://seq-afford.github.io) for more thrilling 
 
 ## 🚩 Plan
 - [x] Paper Released.
-- [ ] Source Code.
+- [ ] Source Code and Pretrained Weights.
 - [ ] Dataset.
+<!-- --- -->
 
 
 
