@@ -7,9 +7,9 @@
       <strong><span style="color: red;">CVPR 2025</span></strong>
     <br>
    <a href='https://ymzhong66.github.io' target='_blank'>Yiming Zhong*</a>&emsp;
-   Qi Jiang*</a>&emsp;
-   Jingyi Yu</a>&emsp;
-   Yuexin Ma</a>&emsp;
+   <a href='https://github.com/Kenny-K' target='_blank'>Qi Jiang*</a>&emsp;
+   <a href='https://sist.shanghaitech.edu.cn/yujingyi/main.htm' target='_blank'>Jingyi Yu</a>&emsp;
+   <a href='https://yuexinma.me' target='_blank'>Yuexin Ma</a>&emsp;
     <br>
     ShanghaiTech University    
     <br>
