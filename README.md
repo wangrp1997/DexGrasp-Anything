@@ -40,7 +40,6 @@
 ## 😲 Results
 Please refer to our [homepage](https://seq-afford.github.io) for more thrilling results!
 
--->
 ## 🛠️ Setup
 - Comming Soon...
 
@@ -49,7 +48,7 @@ Please refer to our [homepage](https://seq-afford.github.io) for more thrilling 
 - [x] Paper Released.
 - [ ] Source Code.
 - [ ] Dataset.
-<!-- --- -->
+
 
 
 ## 🎫 License
