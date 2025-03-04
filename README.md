@@ -30,7 +30,7 @@
 >  We present DexGrasp Anything, consistently surpassing previous dexterous grasping generation methods across five benchmarks. Visualization of our method's results are shown on the left.
 
 <div align="center">
-    <img src="image1.png" height=500>
+    <img src="image1.png" alt="Directional Weight Score" class="blend-img-background center-image" style="max-width: 100%; height: auto;" />
 </div>
 
 ## 📣 News
