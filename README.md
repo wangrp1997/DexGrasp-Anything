@@ -46,7 +46,7 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 
 ## 🚩 Plan
 - [ ] Paper Released.
-- [ ] Source Code and Pretrained Weights.
+- [ ] Source Code.
 - [ ] Dataset.
 <!-- --- -->
 
