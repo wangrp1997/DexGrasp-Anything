@@ -21,8 +21,8 @@
   
 <!--
 <p align="center">
-  <a><b>📖 Project Page</b></a> |
-  <a><b>📄 Paper Link</b></a> |
+  <a href="https://dexgraspanything.github.io/"><b>📖 Project Page</b></a> |
+  <a href="https://dexgraspanything.github.io/"><b>📄 Paper Link</b></a> |
 </p>
 
 </div>
