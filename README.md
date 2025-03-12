@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="https://dexgraspanything.github.io/"><b>📖 Project Page</b></a> |
-  <a href="https://dexgraspanything.github.io/"><b>📄 Paper Link</b></a> |
+  <a href="https://arxiv.org/pdf/2503.08257"><b>📄 Paper Link</b></a> |
 </p>
 
 </div>
