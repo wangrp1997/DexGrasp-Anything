@@ -92,13 +92,12 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 For academic use, this project is licensed under [the 2-clause BSD License](https://opensource.org/license/bsd-2-clause). 
 
 ## 🖊️ Citation
-<!-- ```
-@article{yu2024seqafford,
-        title={SeqAfford: Sequential 3D Affordance Reasoning via Multimodal Large Language Model},
-        author={Yu, Chunlin and Wang, Hanqing and Shi, Ye and Luo, Haoyang and Yang, Sibei and Yu, Jingyi and Wang, Jingya},
-        journal={arXiv preprint arXiv:2412.01550},
-        year={2024}
-      }
-
-``` -->
+```
+@article{zhong2025dexgrasp,
+  title={DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness},
+  author={Zhong, Yiming and Jiang, Qi and Yu, Jingyi and Ma, Yuexin},
+  journal={arXiv preprint arXiv:2503.08257},
+  year={2025}
+}
+```
 
