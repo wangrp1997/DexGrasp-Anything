@@ -41,13 +41,48 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 
 
 ## 🛠️ Setup
-- Comming Soon...
+- 1. Create a new `conda` environemnt and activate it.
+
+    ```bash
+    conda create -n DGA python=3.8
+    conda activate DGA
+    pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+    ```
+
+- 2. Install the required packages.
+    You can change TORCH_CUDA_ARCH_LIST according to your GPU architecture.
+    ```bash
+    TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6" pip install -r requirements.txt
+    ```
+    请在有gpu的环境下安装，否则会报错。
+    ```bash
+    cd src
+    git clone https://github.com/wrc042/CSDF.git
+    cd CSDF
+    pip install -e .
+    cd ..
+    git clone https://github.com/facebookresearch/pytorch3d.git
+    cd pytorch3d
+    git checkout tags/v0.7.2  
+    FORCE_CUDA=1  TORCH_CUDA_ARCH_LIST="7.5;8.0;8.6"  python setup.py install
+    cd ..
+    ```
+- 3. Install the Isaac Gym
+    Follow the [official installation guide](https://developer.nvidia.com/isaac-gym) to install Isaac Gym and its dependencies.
+    You will get a folder named `IsaacGym_Preview_4_Package` put it in ./src/IsaacGym_Preview_4_Package.tar.gz
+    ```bash
+    tar -xzvf IsaacGym_Preview_4_Package.tar.gz
+    cd /isaacgym/python
+    pip install -e .
+    ```
+
 
 
 ## 🚩 Plan
-- [ ] Paper Released.
+- [√] Paper Released.
 - [ ] Source Code.
 - [ ] Dataset.
+- [ ] Checkpoints.
 <!-- --- -->
 
 
