@@ -79,7 +79,7 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 
 
 ## 🚩 Plan
-- [√] Paper Released.
+- [x] Paper Released.
 - [ ] Source Code.
 - [ ] Dataset.
 - [ ] Checkpoints.
