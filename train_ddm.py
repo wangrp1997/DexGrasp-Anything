@@ -36,7 +36,6 @@ def save_ckpt(model: torch.nn.Module, epoch: int, step: int, path: str, save_sce
     
     logger.info('Saving model!!!' + ('[ALL]' if save_scene_model else '[Except SceneModel]'))
     
- # 管理检查点文件，只保留两个最新的检查点
     checkpoint_files = sorted([f for f in os.listdir(os.path.dirname(path)) if f.startswith('model_') and f.endswith('.pth')],
                               key=lambda x: int(x.split('_')[1].split('.')[0]))
     if len(checkpoint_files) >= 5:
