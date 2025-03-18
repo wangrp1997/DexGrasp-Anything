@@ -80,7 +80,7 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 
 ## 🚩 Plan
 - [x] Paper Released.
-- [ ] Source Code.
+- [x] Source Code.
 - [ ] Dataset.
 - [ ] Checkpoints.
 <!-- --- -->
