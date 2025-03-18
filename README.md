@@ -54,7 +54,7 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
     ```bash
     TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6" pip install -r requirements.txt
     ```
-    请在有gpu的环境下安装，否则会报错。
+    Please install in an environment with a GPU, otherwise it will error.
     ```bash
     cd src
     git clone https://github.com/wrc042/CSDF.git
