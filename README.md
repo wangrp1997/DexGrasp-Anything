@@ -76,6 +76,39 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
     pip install -e .
     ```
 
+Before training and testing, please ensure that you set the dataset path, model size, whether to use LLM, sampling method, and other parameters in `configs`.
+
+### Train
+
+- Train with a single GPU
+
+    ```bash
+    bash scripts/grasp_gen_ur/train.sh ${EXP_NAME}
+    ```
+
+- Train with multiple GPUs
+
+    ```bash
+    bash scripts/grasp_gen_ur/train_ddm.sh ${EXP_NAME}
+    ```
+
+### Sample
+
+```bash
+bash scripts/grasp_gen_ur/sample.sh ${exp_dir} [OPT]
+# e.g., Running without Physics-Guided Sampling:   bash scripts/grasp_gen_ur/sample.sh /outputs/exp_dir [OPT]
+# e.g., Running with Physics-Guided Sampling:   bash scripts/grasp_gen_ur/sample.sh /outputs/exp_dir OPT
+```
+- `[OPT]` is an optional parameter for Physics-Guided Sampling.
+
+### Test 
+
+First, you need to run `scripts/grasp_gen_ur/sample.sh` to sample some results. Then, we will compute quantitative metrics using these sampled results.
+
+```bash
+bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR} 
+# e.g., bash scripts/grasp_gen_ur/test.sh  /outputs/exp_dir/eval/final/2025-03-16_19-15-31
+```
 
 
 ## 🚩 Plan
@@ -100,4 +133,3 @@ For academic use, this project is licensed under [the 2-clause BSD License](http
   year={2025}
 }
 ```
-
