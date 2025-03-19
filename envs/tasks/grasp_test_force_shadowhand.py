@@ -590,15 +590,15 @@ class IsaacGraspTestForce_shadowhand(BaseTask):
                 # object_asset_options.vhacd_params.resolution = 3000000
                 object_asset_options.vhacd_params.resolution = 1000000
                 
-                #multidex
-                dataset_name = self.object_name.split('+')[0]
-                object_name = self.object_name.split('+')[1]
-                object_urdf_path = os.path.join(f'/inspurfs/group/mayuexin/datasets/MultiDex_UR/object/{dataset_name}/{object_name}/{object_name}.urdf')
-                object_mesh_path = os.path.join(f'/inspurfs/group/mayuexin/datasets/MultiDex_UR/object/{dataset_name}/{object_name}/{object_name}.stl')
+                # #multidex
+                # dataset_name = self.object_name.split('+')[0]
+                # object_name = self.object_name.split('+')[1]
+                # object_urdf_path = os.path.join(f'/inspurfs/group/mayuexin/datasets/MultiDex_UR/object/{dataset_name}/{object_name}/{object_name}.urdf')
+                # object_mesh_path = os.path.join(f'/inspurfs/group/mayuexin/datasets/MultiDex_UR/object/{dataset_name}/{object_name}/{object_name}.stl')
                 
-                # #realdex
-                # object_mesh_path = os.path.join('/inspurfs/group/mayuexin/datasets/Realdex/meshdata', f'{self.object_name}.obj')
-                # object_urdf_path = os.path.join('/inspurfs/group/mayuexin/datasets/Realdex/meshdata', f'{self.object_name}.urdf')
+                #realdex
+                object_mesh_path = os.path.join('/inspurfs/group/mayuexin/datasets/Realdex/meshdata', f'{self.object_name}.obj')
+                object_urdf_path = os.path.join('/inspurfs/group/mayuexin/datasets/Realdex/meshdata', f'{self.object_name}.urdf')
                 
 
                 #unidex
