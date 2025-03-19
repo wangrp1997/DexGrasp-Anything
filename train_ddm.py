@@ -15,6 +15,7 @@ from datasets.base import create_dataset
 from datasets.misc import collate_fn_general, collate_fn_squeeze_pcd_batch
 from models.base import create_model
 from functools import partial
+from tqdm import tqdm  
 def save_ckpt(model: torch.nn.Module, epoch: int, step: int, path: str, save_scene_model: bool) -> None:
     """ Save current model and corresponding data
 
@@ -36,6 +37,7 @@ def save_ckpt(model: torch.nn.Module, epoch: int, step: int, path: str, save_sce
     
     logger.info('Saving model!!!' + ('[ALL]' if save_scene_model else '[Except SceneModel]'))
     
+ # 管理检查点文件，只保留两个最新的检查点
     checkpoint_files = sorted([f for f in os.listdir(os.path.dirname(path)) if f.startswith('model_') and f.endswith('.pth')],
                               key=lambda x: int(x.split('_')[1].split('.')[0]))
     if len(checkpoint_files) >= 5:
@@ -169,20 +171,19 @@ def main(cfg: DictConfig) -> None:
         model.train()
         if epoch > start_epoch:
             start_step = 0
-        for it, data in enumerate(train_dataloader,start = (start_step % cfg.task.train.log_step)):
+        progress_bar = tqdm(train_dataloader, desc=f'Epoch {epoch + 1}/{cfg.task.train.num_epochs}')
+        for it, data in enumerate(progress_bar):
             for key in data:
                 if torch.is_tensor(data[key]):
                     data[key] = data[key].to(device)
-
             optimizer.zero_grad()
             data['epoch'] = epoch
             outputs = model(data)
             outputs['loss'].backward()
             optimizer.step()
-            
-            ## plot loss only on first device
+            total_loss = outputs['loss'].item()   
+            progress_bar.set_postfix(loss=total_loss)  
             if cfg.gpu == 0 and (step + 1) % cfg.task.train.log_step == 0:
-                total_loss = outputs['loss'].item()
                 log_str = f'[TRAIN] ==> Epoch: {epoch+1:3d} | Iter: {it+1:5d} | Step: {step+1:7d} | Loss: {total_loss:.3f}'
                 logger.info(log_str)
                 for key in outputs:
@@ -191,7 +192,6 @@ def main(cfg: DictConfig) -> None:
                         f'train/{key}': {'plot': True, 'value': val, 'step': step},
                         'train/epoch': {'plot': True, 'value': epoch, 'step': step},
                     })
-
             step += 1
         ## save ckpt in epoch
         if cfg.gpu == 0 and (epoch + 1) % cfg.save_model_interval == 0:

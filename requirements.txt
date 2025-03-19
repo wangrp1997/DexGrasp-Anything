@@ -30,3 +30,4 @@ numcodecs==0.12.1
 numpy==1.23.5
 ipdb==0.13.13
 transformers==4.46.1 
+termcolor==2.4.0

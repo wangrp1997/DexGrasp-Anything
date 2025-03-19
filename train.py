@@ -11,6 +11,7 @@ from datasets.base import create_dataset
 from datasets.misc import collate_fn_general, collate_fn_squeeze_pcd_batch
 from models.base import create_model
 from models.visualizer import create_visualizer
+from tqdm import tqdm  
 
 def train(cfg: DictConfig) -> None:
     """ training portal
@@ -72,7 +73,8 @@ def train(cfg: DictConfig) -> None:
     step = 0
     for epoch in range(0, cfg.task.train.num_epochs):
         model.train()
-        for it, data in enumerate(dataloaders['train']):
+        progress_bar = tqdm(dataloaders['train'], desc=f'Epoch {epoch + 1}/{cfg.task.train.num_epochs}')
+        for it, data in enumerate(progress_bar):
             for key in data:
                 if torch.is_tensor(data[key]):
                     data[key] = data[key].to(device)
@@ -82,10 +84,9 @@ def train(cfg: DictConfig) -> None:
             outputs = model(data)
             outputs['loss'].backward()
             optimizer.step()
-            
-            ## plot loss
+            total_loss = outputs['loss'].item()   
+            progress_bar.set_postfix(loss=total_loss)  
             if (step + 1) % cfg.task.train.log_step == 0:
-                total_loss = outputs['loss'].item()
                 log_str = f'[TRAIN] ==> Epoch: {epoch+1:3d} | Iter: {it+1:5d} | Step: {step+1:7d} | Loss: {total_loss:.3f}'
                 logger.info(log_str)
                 for key in outputs:
