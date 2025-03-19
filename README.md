@@ -126,6 +126,10 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 
 For academic use, this project is licensed under [the 2-clause BSD License](https://opensource.org/license/bsd-2-clause). 
 
+## Acknowledgments
+
+Many codes are borrowed from [Scene-Diffuser](https://github.com/scenediffuser/Scene-Diffuser)
+
 ## 🖊️ Citation
 ```
 @article{zhong2025dexgrasp,
