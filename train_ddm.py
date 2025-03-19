@@ -161,7 +161,7 @@ def main(cfg: DictConfig) -> None:
         logger.info(f'total model size is {sum(nparams)}.')
     ## convert to parallel
     model = torch.nn.parallel.DistributedDataParallel(
-        model, device_ids=[cfg.gpu], output_device=cfg.gpu, find_unused_parameters=False)
+        model, device_ids=[cfg.gpu], output_device=cfg.gpu, find_unused_parameters=True)
     
     # Resume from checkpoint if exists
     start_epoch, start_step = load_ckpt(model, cfg.ckpt_dir, cfg.save_model_seperately)
