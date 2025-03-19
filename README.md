@@ -128,7 +128,7 @@ For academic use, this project is licensed under [the 2-clause BSD License](http
 
 ## Acknowledgments
 
-Many codes are borrowed from [Scene-Diffuser](https://github.com/scenediffuser/Scene-Diffuser)
+Many codes are borrowed from [Scene-Diffuser](https://github.com/scenediffuser/Scene-Diffuser).We thank the authors for their nicely open sourced code and their great contributions to the community.
 
 ## 🖊️ Citation
 ```
