@@ -12,7 +12,7 @@ from datasets.misc import collate_fn_general, collate_fn_squeeze_pcd_batch
 from models.base import create_model
 from models.visualizer import create_visualizer
 from tqdm import tqdm  
-
+from functools import partial
 def train(cfg: DictConfig) -> None:
     """ training portal
 
@@ -34,9 +34,9 @@ def train(cfg: DictConfig) -> None:
         logger.info(f'Load {subset} dataset size: {len(dataset)}')
     
     if cfg.model.scene_model.name == 'PointTransformer':
-        collate_fn = collate_fn_squeeze_pcd_batch
+        collate_fn = partial(collate_fn_squeeze_pcd_batch, use_llm=cfg.model.use_llm)
     else:
-        collate_fn = collate_fn_general
+        collate_fn = partial(collate_fn_general, use_llm=cfg.model.use_llm)
     
     dataloaders = {
         'train': datasets['train'].get_dataloader(
@@ -73,6 +73,7 @@ def train(cfg: DictConfig) -> None:
     step = 0
     for epoch in range(0, cfg.task.train.num_epochs):
         model.train()
+        
         progress_bar = tqdm(dataloaders['train'], desc=f'Epoch {epoch + 1}/{cfg.task.train.num_epochs}')
         for it, data in enumerate(progress_bar):
             for key in data:
@@ -86,6 +87,7 @@ def train(cfg: DictConfig) -> None:
             optimizer.step()
             total_loss = outputs['loss'].item()   
             progress_bar.set_postfix(loss=total_loss)  
+            ## plot loss
             if (step + 1) % cfg.task.train.log_step == 0:
                 log_str = f'[TRAIN] ==> Epoch: {epoch+1:3d} | Iter: {it+1:5d} | Step: {step+1:7d} | Loss: {total_loss:.3f}'
                 logger.info(log_str)
@@ -110,10 +112,6 @@ def train(cfg: DictConfig) -> None:
                 save_scene_model=cfg.save_scene_model,
             )
 
-        ## test for visualize
-        if cfg.task.visualizer.visualize and (epoch + 1) % cfg.task.visualizer.interval == 0:
-            vis_dir = os.path.join(cfg.vis_dir, f'epoch{epoch+1:0>4d}')
-            visualizer.visualize(model, dataloaders['test_for_vis'], vis_dir)
 
 def save_ckpt(model: torch.nn.Module, epoch: int, step: int, path: str, save_scene_model: bool) -> None:
     """ Save current model and corresponding data
