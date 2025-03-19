@@ -103,7 +103,9 @@ bash scripts/grasp_gen_ur/sample.sh ${exp_dir} [OPT]
 
 ### Test 
 
-First, you need to run `scripts/grasp_gen_ur/sample.sh` to sample some results. Then, we will compute quantitative metrics using these sampled results.
+First, you need to run `scripts/grasp_gen_ur/sample.sh` to sample some results. 
+You also need to set the dataset file paths in `/envs/tasks/grasp_test_force_shadowhand.py` and `/inspurfs/group/mayuexin/zym/diffusion+hand/DGA/scripts/grasp_gen_ur/test.py`. 
+Then, we will compute quantitative metrics using these sampled results.
 
 ```bash
 bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR} 
