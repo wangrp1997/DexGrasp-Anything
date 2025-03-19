@@ -69,10 +69,10 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
     ```
 - 3. Install the Isaac Gym
     Follow the [official installation guide](https://developer.nvidia.com/isaac-gym) to install Isaac Gym and its dependencies.
-    You will get a folder named `IsaacGym_Preview_4_Package` put it in ./src/IsaacGym_Preview_4_Package.tar.gz
+    You will get a folder named `IsaacGym_Preview_4_Package.tar.gz` put it in ./src/IsaacGym_Preview_4_Package.tar.gz
     ```bash
     tar -xzvf IsaacGym_Preview_4_Package.tar.gz
-    cd /isaacgym/python
+    cd isaacgym/python
     pip install -e .
     ```
 
