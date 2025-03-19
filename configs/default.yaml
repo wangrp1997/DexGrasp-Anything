@@ -43,7 +43,7 @@ llm:
 use_dpmsolver: False # Whether to use dpmsolver++ for sampling
 
 dataset:
-  active: real_dex  ## Available options: DexGraspNet, Unidexgrasp, DexGRAB, real_dex, Grasp_anything
+  active: real_dex  ## Available options: MultiDexShadowHandUR, DexGraspNet, Unidexgrasp, DexGRAB, real_dex, Grasp_anything
   paths:
     MultiDexShadowHandUR:
       asset_dir: /inspurfs/group/mayuexin/datasets/MultiDex_UR
