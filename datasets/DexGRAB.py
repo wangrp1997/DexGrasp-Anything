@@ -83,7 +83,7 @@ class DexGRAB(Dataset):
         ## resource folders
         self.asset_dir = cfg.asset_dir_slurm if self.slurm else cfg.asset_dir
         self.data_dir = self.asset_dir
-        self.scene_path = os.path.join(self.asset_dir, 'point_cloud_data_10240_nors.pkl')
+        self.scene_path = os.path.join(self.asset_dir, 'object_pcds_nors.pkl')
         self._joint_angle_lower = self._joint_angle_lower.cpu()
         self._joint_angle_upper = self._joint_angle_upper.cpu()
         self._global_trans_lower = self._global_trans_lower.cpu()
