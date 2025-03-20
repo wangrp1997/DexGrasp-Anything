@@ -122,7 +122,7 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 ## 🚩 Plan
 - [x] Paper Released.
 - [x] Source Code.
-- [x] Dataset.
+- [ ] Dataset.
 - [ ] Checkpoints.
 <!-- --- -->
 
