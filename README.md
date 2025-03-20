@@ -122,7 +122,7 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 ## 🚩 Plan
 - [x] Paper Released.
 - [x] Source Code.
-- [ ] Dataset.
+- [x] Dataset.
 - [ ] Checkpoints.
 <!-- --- -->
 
@@ -134,7 +134,7 @@ For academic use, this project is licensed under [the 2-clause BSD License](http
 
 ## Acknowledgments
 
-Many codes are borrowed from [Scene-Diffuser](https://github.com/scenediffuser/Scene-Diffuser).We thank the authors for their nicely open sourced code and their great contributions to the community.
+We would like to acknowledge that some codes and datasets are borrowed from [Scene-Diffuser](https://github.com/scenediffuser/Scene-Diffuser), [RealDex](https://github.com/4DVLab/RealDex), [DexGraspNet](https://github.com/PKU-EPIC/DexGraspNet), [UniDexGrasp](https://github.com/PKU-EPIC/UniDexGrasp), [GRAB](https://github.com/otaheri/GRAB), and [MultiDex Dataset](https://github.com/tengyu-liu/GenDexGrasp). We appreciate the authors for their great contributions to the community and for open-sourcing their code and datasets.
 
 ## 🖊️ Citation
 ```
