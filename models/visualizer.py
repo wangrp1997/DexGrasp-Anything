@@ -180,7 +180,7 @@ class GraspGenURVisualizer():
                     
                     vis_data += self.hand_model.get_plotly_data(opacity=1.0, color='#8799C6')
                     # Save as HTML file
-                    save_path = os.path.join(save_dir, f'{object_name}_sample-{i}.html')
+                    save_path = os.path.join(save_dir, 'html', f'{object_name}+sample-{i}.html')
                     fig = go.Figure(data=vis_data)
                     fig.update_layout(
                         scene=dict(
