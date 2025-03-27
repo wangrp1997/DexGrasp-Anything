@@ -80,9 +80,18 @@ def load_ckpt(model: torch.nn.Module, ckpt_dir: str, save_model_separately: bool
 
     logger.info(f'Loading checkpoint from {ckpt_path}')
     checkpoint = torch.load(ckpt_path)
-    model.load_state_dict(checkpoint['model'])
     epoch = checkpoint['epoch']
     step = checkpoint['step']
+    saved_state_dict = checkpoint['model']
+    model_state_dict = model.state_dict()
+
+    for key in model_state_dict:
+        if key in saved_state_dict:
+            model_state_dict[key] = saved_state_dict[key]
+        ## model is trained with ddm
+        if 'module.'+key in saved_state_dict:
+            model_state_dict[key] = saved_state_dict['module.'+key]
+    model.load_state_dict(model_state_dict)
     return epoch, step
 
 @hydra.main(version_base=None, config_path="./configs", config_name="default")
