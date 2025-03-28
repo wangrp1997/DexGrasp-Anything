@@ -146,7 +146,7 @@ def diversity_tester(args: argparse.Namespace, stability_results: dict) -> None:
 
 
 def collision_tester(args: argparse.Namespace, stability_results: dict) -> None:
-    _BATCHSIZE = 32 #NOTE: adjust this batchsize to fit your GPU memory && need to be divided by generated grasps per object
+    _BATCHSIZE = 8 #NOTE: adjust this batchsize to fit your GPU memory && need to be divided by generated grasps per object
     _NPOINTS = 4096 #NOTE: number of surface points sampled from a object
 
     grasps = pickle.load(open(os.path.join(args.eval_dir, 'res_diffuser.pkl'), 'rb'))
@@ -157,9 +157,9 @@ def collision_tester(args: argparse.Namespace, stability_results: dict) -> None:
     #grasp_anyting
     # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/grasp_anyting/object_pcds_nors.pkl', 'rb'))
     #unidex
-    # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/UniDexGrasp/DFCData/object_pcds_nors.pkl', 'rb'))
+    # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/UniDexGrasp/DFCData/scaled_object_pcds_nors.pkl', 'rb'))
     #dexgrasp
-    # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/DexGraspNet/object_pcds_nors.pkl', 'rb'))
+    # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/DexGraspNet/scaled_object_pcds_nors.pkl', 'rb'))
     #DexGRAB
     # obj_pcds_nors_dict = pickle.load(open('/inspurfs/group/mayuexin/datasets/DexGRAB/object_pcds_nors.pkl', 'rb'))
     
