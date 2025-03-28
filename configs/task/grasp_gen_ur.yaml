@@ -42,3 +42,4 @@ visualizer:
   visualize_html: false
   interval: 1
   use_llm: ${llm.enabled}
+  datasetname: ${task.dataset.name}

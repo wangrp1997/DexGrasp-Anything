@@ -29,14 +29,17 @@ class GraspGenURVisualizer():
         self.hand_model = get_handmodel(batch_size=1, device='cuda')
         self.use_llm = cfg.use_llm
         self.visualize_html = cfg.visualize_html
+        self.datasetname = cfg.datasetname
         ##############################################################################################################################
         ##### Since other datasets have object scale=1, for testing convenience we use average scales from DexGraspNet and UniDexGrasp test sets #####
         ##### To test with different mesh sizes, please adjust the mesh scale accordingly for proper visualization #####
         ##############################################################################################################################
         ### For DexGraspNet ###
-        self.average_scales = self.load_average_scales('/inspurfs/group/mayuexin/datasets/DexGraspNet/scales.pkl')
+        if self.datasetname == 'DexGraspNet':
+            self.average_scales = self.load_average_scales('/inspurfs/group/mayuexin/datasets/DexGraspNet/scales.pkl')
         ### For UniDexGrasp ###
-        # self.average_scales = self.load_average_scales( '/inspurfs/group/mayuexin/datasets/UniDexGrasp/DFCData/scales.pkl')
+        else:
+            self.average_scales = self.load_average_scales( '/inspurfs/group/mayuexin/datasets/UniDexGrasp/DFCData/scales.pkl')
         ##############################################################################################################################
         ##############################################################################################################################
     def load_average_scales(self, file_path):
