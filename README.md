@@ -45,6 +45,17 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
 - Download DexArt assets from [Google Drive](https://drive.google.com/file/d/1DxRfB4087PeM3Aejd6cR-RQVgOKdNrL4/view?usp=sharing) and put the `assets` folder under `$YOUR_REPO_PATH/third_party/dexart-release/`. -->
 
 <!-- **Note**: since you are generating demonstrations by yourselves, the results could be slightly different from the results reported in the paper. This is normal since the results of imitation learning highly depend on the demonstration quality. **Please re-generate demonstrations if you encounter some bad demonstrations** and **no need to open a new issue**. -->
+# 🦾 Make your own dataset
+- First, your dataset should contain mesh files of objects. You can create an `object_pcds_nors.pkl` file by sampling point clouds from these meshes. Modify the paths in `Process_your_dataset/make_obj_pcds.py` to build your dataset.
+    ```bash
+    python Process_your_dataset/make_obj_pcds.py
+    ```
+- Based on your data pose format (such as translation, rotation, qpose, scale), create a corresponding .pt file. You can refer to the input examples in the datasets folder to build it. You need to understand the pose format of your dataset. Pay special attention to whether the translation, rotation, and scale are applied to the object point cloud or to the robotic hand. You can also modify your dataloader to ensure that the input poses and object point cloud data visualize correctly.
+
+- During the testing phase, you need to generate a URDF file for all meshes. You can use `Process_your_dataset/make_obj_urdf.py` to generate them (recommended to place in the same directory level as the mesh files).
+    ```bash
+    python Process_your_dataset/make_obj_urdf.py
+    ```
 
 ## 🛠️ Setup
 - 1. Create a new `conda` environemnt and activate it.
@@ -122,6 +133,7 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 ## 🚩 Plan
 - [x] Paper Released.
 - [x] Source Code.
+- [x] Make your own dataset.
 - [ ] Dataset.
 - [ ] Checkpoints.
 <!-- --- -->
