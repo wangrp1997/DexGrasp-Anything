@@ -133,7 +133,7 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 # e.g., bash scripts/grasp_gen_ur/test.sh  /outputs/exp_dir/eval/final/2025-03-16_19-15-31
 ```
 
-## 🚩 Checkpoints
+##  Checkpoints
 | DexGrasp Anything(W/o LLM)                     | Checkpoint Link |
 |------------------------------------------------------------------------|---------|
 | *Realdex*  | [CKPT](https://drive.google.com/drive/folders/1_Nnj73l88__2i5_ek1sE8aujvAqvmpZw)    |
