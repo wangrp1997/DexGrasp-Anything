@@ -40,11 +40,14 @@
 Please refer to our [homepage](https://dexgraspanything.github.io/) for more thrilling results!
 
 # 📚 Data
-<!-- You could generate demonstrations by yourself using our provided expert policies.  Generated demonstrations are under `$YOUR_REPO_PATH/3D-Diffusion-Policy/data/`.
-- Download Adroit RL experts from [OneDrive](https://1drv.ms/u/s!Ag5QsBIFtRnTlFWqYWtS2wMMPKNX?e=dw8hsS), unzip it, and put the `ckpts` folder under `$YOUR_REPO_PATH/third_party/VRL3/`.
-- Download DexArt assets from [Google Drive](https://drive.google.com/file/d/1DxRfB4087PeM3Aejd6cR-RQVgOKdNrL4/view?usp=sharing) and put the `assets` folder under `$YOUR_REPO_PATH/third_party/dexart-release/`. -->
-
-<!-- **Note**: since you are generating demonstrations by yourselves, the results could be slightly different from the results reported in the paper. This is normal since the results of imitation learning highly depend on the demonstration quality. **Please re-generate demonstrations if you encounter some bad demonstrations** and **no need to open a new issue**. -->
+| **Dataset**                | **Download Link (Format Compatible with Our Dataloader)**                | **Paper**                                                                                                                        |
+|-----------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| *DGA*             | [Datasets](https://dexgraspanything.github.io/)                     | ✅[DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](https://arxiv.org/pdf/2503.08257)                                                    |
+| *Realdex*             | [Datasets](https://drive.google.com/file/d/12rgyyKg07PmY6jzl7pMocA4o5ikLFuOA/view)                     | ✅[RealDex: Towards Human-like Grasping for Robotic Dexterous Hand](https://arxiv.org/abs/2402.13853)                                                    |
+| *DexGraspNet*             | [Datasets](https://drive.google.com/file/d/1FHJxEDl2jegOpq-g4KZ4eEVvM3gqDQCh/view)                     | ✅[DexGraspNet: A Large-Scale Robotic Dexterous Grasp Dataset for General Objects Based on Simulation](https://arxiv.org/abs/2210.02697)                                                    |
+| *UniDexGrasp*             | [Datasets](https://drive.google.com/file/d/1-nPUP14x0VOfIqQwYU-hc-WhUaPBxEQ7/view)                     | ✅[UniDexGrasp: Universal Robotic Dexterous Grasping via Learning Diverse Proposal Generation and Goal-Conditioned Policy](https://arxiv.org/abs/2303.00938)                                                    |
+| *MultiDex*             | [Datasets](https://drive.google.com/file/d/1wHdWLfvxWjpFBV_Ld-j4DwNXAr1UMERf/view)                     | ✅[GenDexGrasp: Generalizable Dexterous Grasping](https://arxiv.org/abs/2210.00722)                                                    |
+| *DexGRAB(Retargeting from Grab)*             | [Datasets](https://drive.google.com/file/d/1Xmgw-c3lrkab2NIs_1i0Hq95I0Y4Sp8n/view)                     | ✅[Grab: A dataset of whole-body human grasping of objects.](https://arxiv.org/abs/2008.11200)                                                    |
 
 # 🦾 Make your own dataset
 - First, your dataset should contain mesh files of objects. You can create an `object_pcds_nors.pkl` file by sampling point clouds from these meshes. Modify the paths in `Process_your_dataset/make_obj_pcds.py` to build your dataset.
@@ -130,13 +133,21 @@ bash scripts/grasp_gen_ur/test.sh ${EVAL_DIR}
 # e.g., bash scripts/grasp_gen_ur/test.sh  /outputs/exp_dir/eval/final/2025-03-16_19-15-31
 ```
 
+## 🚩 Checkpoints
+| DexGrasp Anything(W/o LLM)                     | Checkpoint Link |
+|------------------------------------------------------------------------|---------|
+| *Realdex*  | [CKPT](https://drive.google.com/drive/folders/1_Nnj73l88__2i5_ek1sE8aujvAqvmpZw)    |
+| *DexGraspNet*  | [CKPT](https://drive.google.com/drive/folders/1Yfc9X-V21gv4YRmrD8KeMMARaHDNIBrZ)    |
+| *UniDexGrasp*   | [CKPT](https://drive.google.com/drive/folders/16a5JfyBqe1f1BjTOxvLOujCU-vQKjv5b)    |
+| *MultiDex*   | [CKPT](https://drive.google.com/drive/folders/1RAFqmc0OeMGt4g6vV2Aa5g4igySlsM30)    |
+| *DexGRAB*   | [CKPT](https://drive.google.com/drive/folders/1kva1FviOM59d3zbJ2Jyj8Ohvz8AWI8AT)    |
 
 ## 🚩 Plan
 - [x] Paper Released.
 - [x] Source Code.
+- [x] Dataset.
 - [x] Make your own dataset.
-- [ ] Dataset.
-- [ ] Checkpoints.
+- [x] Checkpoints.
 <!-- --- -->
 
 
