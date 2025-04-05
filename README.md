@@ -4,7 +4,7 @@
  withPhysicsAwareness
 </strong></h1>
   <p align="center">
-      <strong><span style="color: red;">CVPR 2025</span></strong>
+      <strong><span style="color: red;">CVPR 2025(Highlight)</span></strong>
     <br>
    <a href='https://ymzhong66.github.io' target='_blank'>Yiming Zhong*</a>&emsp;
    <a href='https://github.com/Kenny-K' target='_blank'>Qi Jiang*</a>&emsp;
