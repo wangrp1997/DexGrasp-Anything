@@ -62,7 +62,7 @@ Please refer to our [homepage](https://dexgraspanything.github.io/) for more thr
     ```
 
 ## 🛠️ Setup
-- 1. Create a new `conda` environemnt and activate it.（My nvcc --version is 11.7）
+- 1. Create a new `conda` environemnt and activate it.（My CUDA version (nvcc --version) is 11.7）
 
     ```bash
     conda create -n DGA python=3.8
