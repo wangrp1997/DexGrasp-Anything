@@ -34,7 +34,7 @@
 </div>
 
 ## 📣 News
-- [4/29/2025] Create a new branch dev!
+- [4/29/2025] Create a new branch dev for test! 
 - [2/27/2025] 🎉🎉🎉DexGraspAnything has been accepted by CVPR 2025!!!🎉🎉🎉
 
 ## 😲 Results
